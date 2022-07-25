@@ -18,12 +18,59 @@
     font-size: 2rem;
 }
 .hero-text {
-    text-align: center;
+    text-align: left;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+}
+
+html {
+    scroll-padding-top: 56px; /* height of sticky header */
+}
+
+.typewriter h2 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgba(255, 166, 0, 0); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .05em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(50, end),
+      blink-caret .75s step-end 2.7;
+}
+
+.typewriter p {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgba(255, 166, 0, 0); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .05em; /* Adjust as needed */
+    opacity: 0;
+    animation: 
+      appears 2.4s forwards, 
+      typing 3.5s steps(70, end),
+      blink-caret .75s step-end 3;
+    animation-delay: 2.7s;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+@keyframes appears {
+    0% {opacity: 0}
+    1% {opacity: 1}
+    100% {opacity: 1;}
 }
 
 /* spacing on all sections */
